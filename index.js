@@ -30,6 +30,14 @@ async function run() {
         body: 'Looks good to me :shipit:',
         event: 'APPROVE',
       })
+    } else {
+      client.pulls.createReview({
+        owner,
+        repo,
+        pull_number: github.context.payload.pull_request.number,
+        body: `I can't automatically approve changes from "${prSrc}" to "${prTarget}. A human will have to review this. :robot:`
+        event: 'COMMENT',
+      })
     }
   } catch (err) {
     //Even if it's a valid situation, we want to fail the action in order to be able to find the issue and fix it.
