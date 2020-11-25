@@ -4,18 +4,14 @@
   "private": true,
   "description": "A GitHub action that automatically approves changes from develop to qa and from qa to main.",
   "keywords": [
-    "actions",
-    "github"
+    "github",
+    "actions"
   ],
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "github",
-    "actions"
-  ],
   "author": "Nils Caspar",
   "license": "MIT",
   "dependencies": {
