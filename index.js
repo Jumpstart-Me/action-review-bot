@@ -37,3 +37,5 @@ async function run() {
     core.debug(JSON.stringify(err));
   }
 }
+
+run();
