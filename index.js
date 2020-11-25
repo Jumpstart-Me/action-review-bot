@@ -35,7 +35,7 @@ async function run() {
         owner,
         repo,
         pull_number: github.context.payload.pull_request.number,
-        body: `I can't automatically approve changes from "${prSrc}" to "${prTarget}. A human will have to review this. :robot:`
+        body: `I can't automatically approve changes from "${prSrc}" to "${prTarget}. A human will have to review this. :robot:`,
         event: 'COMMENT',
       })
     }
