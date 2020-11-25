@@ -8,8 +8,8 @@ const token = core.getInput("github-token", { required: true }),
   client = new github.getOctokit(token);
 
 const approveSrcTarget = {
-  developBranch: qaBranch,
-  qaBranch: mainBranch,
+  [developBranch]: qaBranch,
+  [qaBranch]: mainBranch,
 }
 
 async function run() {
