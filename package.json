@@ -1,0 +1,25 @@
+{
+  "name": "action-review-bot",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A GitHub action that automatically approves changes from develop to qa and from qa to main.",
+  "keywords": [],
+    "actions",
+    "github"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "actions"
+  ],
+  "author": "Nils Caspar",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  }
+}
