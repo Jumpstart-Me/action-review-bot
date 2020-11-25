@@ -5,7 +5,7 @@ const token = core.getInput("github-token", { required: true }),
   developBranch = core.getInput("develop"),
   qaBranch = core.getInput("qa"),
   mainBranch = core.getInput("main"),
-  client = new github.GitHub(token);
+  client = new github.getOctokit(token);
 
 const approveSrcTarget = {
   developBranch: qaBranch,
