@@ -1,0 +1,25 @@
+name: Jumpstart Review Bot
+description: Automatically approves changes from develop to qa and from qa to main.
+author: Nils Caspar
+
+branding:
+  icon: git-merge
+  color: red
+
+inputs:
+  github-token:
+    description: The `GITHUB_TOKEN` secret.
+    required: true
+  develop:
+    description: The `develop` branch.
+    default: develop
+  qa:
+    description: The `qa` branch.
+    default: qa
+  main:
+    description: The `main` branch.
+    default: main
+
+runs:
+  using: 'node12'
+  main: 'index.js'
