@@ -15,6 +15,7 @@ const approveSrcTarget = {
 async function run() {
   try {
     const pr =  github.context.payload.pull_request,
+      action = github.context.payload.action,
       prSrc = pr.head.ref,
       prTarget = pr.base.ref;
       owner = github.context.repo.owner,
@@ -30,7 +31,7 @@ async function run() {
         body: 'Looks good to me :shipit:',
         event: 'APPROVE',
       })
-    } else if (prAction == 'opened') {
+    } else if (action == 'opened') {
       client.pulls.createReview({
         owner,
         repo,
