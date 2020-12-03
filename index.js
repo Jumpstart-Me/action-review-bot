@@ -30,7 +30,7 @@ async function run() {
         body: 'Looks good to me :shipit:',
         event: 'APPROVE',
       })
-    } else {
+    } else if (prAction == 'opened') {
       client.pulls.createReview({
         owner,
         repo,
