@@ -1,5 +1,5 @@
 name: Jumpstart Review Bot
-description: Automatically approves changes from develop to qa and from qa to main.
+description: Automatically approves changes from develop to qa and from qa to main. Also deploy PRs
 author: Nils Caspar
 
 branding:
