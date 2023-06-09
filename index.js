@@ -8,8 +8,8 @@ const token = core.getInput("github-token", { required: true }),
   client = new github.getOctokit(token);
 
 const approveSrcTarget = {
-  [developBranch]: qaBranch,
-  [qaBranch]: mainBranch,
+  [developBranch]: [qaBranch, mainBranch],
+  [qaBranch]: [mainBranch],
 }
 
 async function run() {
@@ -23,7 +23,7 @@ async function run() {
 
     core.info(`Pull Request src: "${prSrc}", target: "${prTarget}"`);
 
-    if (prSrc in approveSrcTarget && approveSrcTarget[prSrc] == prTarget) {
+    if (prSrc in approveSrcTarget && approveSrcTarget[prSrc].includes(prTarget)) {
       client.pulls.createReview({
         owner,
         repo,
